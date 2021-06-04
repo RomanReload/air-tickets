@@ -1,6 +1,12 @@
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
+import filteredFoo from "./functions";
 const initialState = {
+    errors: {
+        status: false,
+        info: null,
+    },
+    loader: true,
     allTickets: [],
     airTickets: [],
 };
@@ -23,6 +29,17 @@ export const ticketsReducer = (state = initialState, action) => {
                     allTickets: ticketsArr,
                 };
             }
+        case "LOADER-OFF":
+            {
+                return {...state, loader: false };
+            }
+        case "ERROR":
+            {
+                return {
+                    ...state,
+                    errors: { status: true, info: "ERROR 500, PLEASE RELOAD THE PAGE" },
+                };
+            }
         case "LOW-COST-FAST-AIRPLANE":
             {
                 let sortedTickets = [];
@@ -39,41 +56,6 @@ export const ticketsReducer = (state = initialState, action) => {
             }
         case "CHECKBOX-FILTER":
             {
-                const filteredFoo = ({
-                        all = false,
-                        without = false,
-                        one = false,
-                        two = false,
-                        three = false,
-                    },
-                    allTickets
-                ) => {
-                    let data = [
-                        ...allTickets.filter((ticket) => {
-                            const transfer = ticket.segments[0].stops.length;
-                            if (all) {
-                                return ticket;
-                            }
-                            if (without) {
-                                console.log("WITHOUT");
-                                return transfer === 0;
-                            }
-                            if (one) {
-                                console.log("ONE");
-                                return transfer === 1;
-                            }
-                            if (two) {
-                                return transfer === 2;
-                            }
-                            if (three) {
-                                return transfer === 3;
-                            }
-                            return null;
-                        }),
-                    ];
-                    return data.length !== 0 ? data : allTickets;
-                };
-
                 const { allTickets } = state;
                 const { airTickets } = state;
                 filteredFoo(action.payload, airTickets);

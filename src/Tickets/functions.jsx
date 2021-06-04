@@ -4,9 +4,9 @@ const makeReadableTime = (time) => {
   return time.toLocaleString().split(",")[1].split(":").slice(0, 2).join(":");
 };
 
-const showedTickets = (props) => {
+const showedTickets = (props, showedTickets = 5) => {
   if (props.length !== 0) {
-    const fiveTickets = chunk(props, 5)[0];
+    const fiveTickets = chunk(props, showedTickets)[0];
     const dataTickets = fiveTickets.map((obj) => {
       const { price, segments, carrier } = obj;
       const { origin, destination, duration, stops } = segments[0];

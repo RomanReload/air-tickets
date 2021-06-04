@@ -1,14 +1,16 @@
 import React from "react";
 import "./App.css";
 import Header from "./Header/Header";
-import FiltersMain from "./Filters";
+import MainBlock from "./Filters";
 
 function App() {
   return (
-    <div className="container-fluid w-75">
-      <Header />
+    <div className="container-fluid w-80">
+      <header>
+        <Header />
+      </header>
       <main>
-        <FiltersMain />
+        <MainBlock />
       </main>
     </div>
   );

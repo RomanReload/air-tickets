@@ -1,31 +1,54 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Field, reduxForm } from "redux-form";
+import InputReduxComponent from "./InputRedux";
 
 const CheckBoxes = (props) => {
   return (
     <>
       <ul className="checkbox-block rounded p-2">
-        <h5>Количество пересадок</h5>
+        <h5>
+          <strong>Количество пересадок</strong>
+        </h5>
         <li>
-          <Field name="all" component="input" type="checkbox" />
-          <label htmlFor="all">Все</label>
+          <Field
+            type={"checkbox"}
+            name={"all"}
+            text={"Все"}
+            component={InputReduxComponent}
+          />
         </li>
         <li>
-          <Field name="without" component="input" type="checkbox" />
-          <label htmlFor="without">Без пересадок</label>
+          <Field
+            type={"checkbox"}
+            name={"without"}
+            text={"Без пересадок"}
+            component={InputReduxComponent}
+          />
         </li>
         <li>
-          <Field name="one" component="input" type="checkbox" />
-          <label htmlFor="one">1 пересадка</label>
+          <Field
+            type={"checkbox"}
+            name={"one"}
+            text={"1 пересадка"}
+            component={InputReduxComponent}
+          />
         </li>
         <li>
-          <Field name="two" component="input" type="checkbox" />
-          <label htmlFor="two">2 пересадки</label>
+          <Field
+            type={"checkbox"}
+            name={"two"}
+            text={"2 пересадки"}
+            component={InputReduxComponent}
+          />
         </li>
         <li>
-          <Field name="three" component="input" type="checkbox" />
-          <label htmlFor="three">3 пересадки</label>
+          <Field
+            type={"checkbox"}
+            name={"three"}
+            text={"3 пересадки"}
+            component={InputReduxComponent}
+          />
         </li>
       </ul>
     </>
@@ -33,7 +56,7 @@ const CheckBoxes = (props) => {
 };
 
 const CheckBoxRedux = reduxForm({
-  form: "contact",
+  form: "checkboxes",
 })(CheckBoxes);
 
 const CheckBoxBlock = () => {

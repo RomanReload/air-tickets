@@ -38,7 +38,7 @@
 }
 
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'IBM Plex Serif', serif;
     background-color: rgb(240, 248, 255);
 }
 
@@ -66,4 +66,12 @@ ul {
 
 .logo-img {
     width: 250px;
+}
+
+.bs {
+    border-radius: 0;
+}
+
+li:hover {
+    background-color: rgb(233, 248, 255);
 }

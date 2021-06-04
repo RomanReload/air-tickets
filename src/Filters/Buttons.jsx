@@ -10,7 +10,7 @@ const Buttons = () => {
           onClick={() =>
             dispatch({ type: "LOW-COST-FAST-AIRPLANE", payload: "LOW-COST" })
           }
-          className="btn btn-primary w-40 m-1"
+          className="btn btn-primary w-40 m-1 bs"
         >
           САМЫЙ ДЕШЕВЫЙ
         </button>
@@ -21,7 +21,7 @@ const Buttons = () => {
               payload: "FAST-AIRPLANE",
             })
           }
-          className="btn btn-primary w-40"
+          className="btn btn-primary w-40 bs"
         >
           САМЫЙ БЫСТРЫЙ
         </button>
