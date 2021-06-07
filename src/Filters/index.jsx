@@ -18,6 +18,7 @@ const MainBlock = () => {
   );
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     const asyncFoo = async () => {
       const getId = await axios

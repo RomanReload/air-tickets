@@ -67,9 +67,16 @@ const CheckBoxBlock = () => {
       payload: values,
     });
   };
+  const handleClick = (e) => {
+    e.preventDefault();
+    dispatch({ type: "SHOW-FIVE-TICKETS" });
+  };
   return (
     <div className="col-12 col-sm-4 mt-5">
       <CheckBoxRedux onChange={onSubmit} />
+      <button onClick={handleClick} className="btn btn-primary w-100">
+        <strong>ПОКАЗАТЬ 5 БИЛЕТОВ</strong>
+      </button>
     </div>
   );
 };

@@ -4,7 +4,7 @@ const makeReadableTime = (time) => {
   return time.toLocaleString().split(",")[1].split(":").slice(0, 2).join(":");
 };
 
-const showedTickets = (props, showedTickets = 5) => {
+const getShowedTickets = (props, showedTickets = 5) => {
   if (props.length !== 0) {
     const fiveTickets = chunk(props, showedTickets)[0];
     const dataTickets = fiveTickets.map((obj) => {
@@ -40,7 +40,7 @@ const showedTickets = (props, showedTickets = 5) => {
             <thead className="tickets-table">
               <tr className="border-0">
                 <th scope="row" className="h3 text-primary">
-                  {(price / 73.5).toFixed(0)}$
+                  <strong>{(price / 73.5).toFixed(0)} $</strong>
                 </th>
                 <th></th>
                 <th>
@@ -88,4 +88,4 @@ const showedTickets = (props, showedTickets = 5) => {
   return null;
 };
 
-export default showedTickets;
+export default getShowedTickets;

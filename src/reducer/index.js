@@ -9,6 +9,7 @@ const initialState = {
     loader: true,
     allTickets: [],
     airTickets: [],
+    showedTickets: 5,
 };
 export const ADD_ALL_TCKETS = "ADD_ALL-TICKETS";
 
@@ -63,6 +64,15 @@ export const ticketsReducer = (state = initialState, action) => {
                     ...state,
                     airTickets: filteredFoo(action.payload, allTickets),
                 };
+            }
+        case "SHOW-MORE-THICKETS":
+            {
+                const moreTickets = state.showedTickets + 5;
+                return {...state, showedTickets: moreTickets };
+            }
+        case "SHOW-FIVE-TICKETS":
+            {
+                return {...state, showedTickets: 5 };
             }
         default:
             return state;

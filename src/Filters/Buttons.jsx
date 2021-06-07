@@ -5,25 +5,32 @@ const Buttons = () => {
 
   return (
     <>
-      <div className="col-12 text-center mb-1">
+      <div
+        className="col-12 btn-group mb-1 mt-1"
+        role="group"
+        aria-label="Basic example"
+      >
         <button
+          type="button"
           onClick={() =>
             dispatch({ type: "LOW-COST-FAST-AIRPLANE", payload: "LOW-COST" })
           }
-          className="btn btn-primary w-40 m-1 bs"
+          className="btn btn-primary bs"
         >
-          САМЫЙ ДЕШЕВЫЙ
+          <strong>САМЫЙ ДЕШЕВЫЙ</strong>
         </button>
+        &nbsp;
         <button
+          type="button"
           onClick={() =>
             dispatch({
               type: "LOW-COST-FAST-AIRPLANE",
               payload: "FAST-AIRPLANE",
             })
           }
-          className="btn btn-primary w-40 bs"
+          className="btn btn-primary bs"
         >
-          САМЫЙ БЫСТРЫЙ
+          <strong>САМЫЙ БЫСТРЫЙ</strong>
         </button>
       </div>
     </>

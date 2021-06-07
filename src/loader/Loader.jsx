@@ -2,7 +2,7 @@ import "./index.css";
 
 const Loader = () => {
   return (
-    <div className="row justify-content-around">
+    <div className="row justify-content-center">
       <div className="col-12 loader">
         <svg
           viewBox="0 0 120 120"
